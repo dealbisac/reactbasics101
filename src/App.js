@@ -18,28 +18,6 @@ function App() {
   // - Call hooks from React FC's (functional components)
   // - Call hooks from yjhe custom hooks
 
-
-  // right way
-  const [test, setTest] = useState("whoops"); //4
-
-  // right way
-  useEffect(() => {
-    //5
-    if (randomNo < 50) {
-      console.log("render");
-    }
-  });
-
-  //correct way
-  //6
-  useEffect(() => {
-    const testing = () => {
-      console.log("render")
-    };
-
-    testing();
-  });
-
   const addTodo = (e) => {
     e.preventDefault();  //prevents refresh
 
