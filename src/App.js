@@ -1,26 +1,16 @@
 import './App.css';
+import Header from './Header';
 
 //BEM - Block Element Modifier
 
 function App() {
 
-  const name = "Dipendra";
-  const isMale = true;
-
-  // userdefined function
-  function getString(user) {
-    if (user) {
-      return <h1>Hello,  {user}!</h1>;
-    } else {
-      return <h1>Hello, Stranger.</h1>;
-    }
-
-  }
-
   return (
     <div className="app">
-      {getString()}
-      <h2>You are a {isMale ? "Male" : "Female"}</h2>
+      <Header />
+      <h1 className="app__title">This is a title</h1>
+      <h1 className="app__title--large">This is a large title</h1>
+      <h1 className="app__title--small">This is small title</h1>
     </div>
   );
 }
