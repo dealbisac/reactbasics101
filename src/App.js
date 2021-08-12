@@ -1,22 +1,32 @@
-import React from 'react';
-import Product from './Product';
+import React, { useState } from 'react';
 import styles from './App.module.css';
 
 function App() {
+  const [todos, setTodos] = useState([
+    "Take me there",
+    "Finish Coding",
+  ]);
+
+  const [input, setInput] = useState("");
+
+  const addTodo = (e) => {
+    console.log(`This is input ${input}`);
+    setTodos([...todos, input])
+  }
+
+
+
   return (
     <div className="app">
-      <h1>Hello World</h1>
-      <h2 className={styles.error}>An error occured</h2>
+      <h1>Welcome to my TODO List</h1>
+      <input value={input} onChange={(e) => setInput(e.target.value)} type="text" />
+      <button onClick={addTodo}>Add Todo</button>
 
-      <Product name="Amazon Echo" description="Your AI Assistant" price={59.99} />
-      <Product name="Google Home" description="Google Home" price={99.99} />
-      <Product name="Iphone Pro Max" description="The new phone" price={559.99} />
-      <Product name="Amazon Echo" description="Your AI Assistant" price={59.99} />
-      {/* Product, name, description price */}
-      {/* Product, name, description price */}
-      {/* Product, name, description price */}
-      {/* Product, name, description price */}
+      <h2>List of Todos</h2>
+      {todos.map((todo) => (
+        <p>{todo}</p>
+      ))}
     </div>
-  )
+  );
 }
 export default App;
