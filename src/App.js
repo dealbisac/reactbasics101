@@ -2,9 +2,43 @@ import React, { useState } from 'react';
 import styles from './App.module.css';
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState(""); //1
+  const [todos, setTodos] = useState([]); //2
+  const [randomNo, setRandomNo] = useState(Math.floor(Math.random() * 101)); //<--Random number between 0 to 100 //3
 
-  const [input, setInput] = useState("");
+  //Rules of Hooks
+  //1. Only call hooks( useState & useEffect) at the TOP Level
+  // - This means dont call hooks inside LOOP_TYPES, conditions or nested functions
+  // - Always use hooks at the top level of react functions
+  // - By following this rule, you ensure hooks are called in the same order each time a component renders
+  // - This allows react to correctly preserve the state of hooks between useState / useEffect calls
+
+
+  // 2/ Don't call hooks from regulat JS functions
+  // - Call hooks from React FC's (functional components)
+  // - Call hooks from yjhe custom hooks
+
+
+  // right way
+  const [test, setTest] = useState("whoops"); //4
+
+  // right way
+  useEffect(() => {
+    //5
+    if (randomNo < 50) {
+      console.log("render");
+    }
+  });
+
+  //correct way
+  //6
+  useEffect(() => {
+    const testing = () => {
+      console.log("render")
+    };
+
+    testing();
+  });
 
   const addTodo = (e) => {
     e.preventDefault();  //prevents refresh
