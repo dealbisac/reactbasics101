@@ -1,10 +1,12 @@
 import React from 'react';
 import Product from './Product';
+import styles from './App.module.css';
 
 function App() {
   return (
     <div className="app">
       <h1>Hello World</h1>
+      <h2 className={styles.error}>An error occured</h2>
 
       <Product name="Amazon Echo" description="Your AI Assistant" price={59.99} />
       <Product name="Google Home" description="Google Home" price={99.99} />

@@ -1,11 +1,13 @@
-import React from 'react'
-import ItemDescription from './ItemDescription'
+import React from 'react';
+import ItemDescription from './ItemDescription';
+import styles from './Product.module.css';
 
 function Product({ name, description, price }) {
     return (
-        <div>
+        <div className={styles.product}>
             <ItemDescription name={name} description={description} />
-            <h1>$ {price}</h1>
+            <h2 className={styles.errors}>An error occured</h2>
+            <h1 className={styles.price}>$ {price}</h1>
 
         </div>
     )
