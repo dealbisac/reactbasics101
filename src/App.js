@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 //Class Based Component
-class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <h1>Hello World</h1>
-      </div>
-    )
-  }
+function App() {
+  return (
+    <div className="app">
+      <h1>Hello World</h1>
+    </div>
+  )
 }
 
 export default App;
