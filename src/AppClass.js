@@ -23,4 +23,4 @@ function AppClass() {
     )
 }
 
-export default App;
+export default AppClass;
